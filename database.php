@@ -27,8 +27,21 @@
     	function input($nama,$alamat,$usia){
     		mysqli_query($this->conn,"insert into user values('','$nama','alamat','usia')");
     	}
+
     	function hapus($id){
     		mysqli_query($this->conn,"delete from user where id='$id'");
+
     	}
+    	function edit($id){
+    		$data = mysqli_query($this->conn,"select * from user where id='$id'");
+			while($d = mysqli_fetch_array($data)){
+				$hasil [] = $d;
+		}
+		return $hasil;
+		}
+
+		function update($id,$nama,$alamat,$usia){
+			mysqli_query($this->conn,"update user set nama='$nama',alamat='$alamat',usia='$usia' where id='$id'");
+		}
 	}
 //$db = new database;
