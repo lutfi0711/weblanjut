@@ -25,7 +25,7 @@
     	}
 
     	function input($nama,$alamat,$usia){
-    		mysqli_query($this->conn,"insert into user values('','$nama','alamat','usia')");
+    		mysqli_query($this->conn,"insert into user values('','$nama','$alamat','$usia')");
     	}
 
     	function hapus($id){
