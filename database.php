@@ -1,12 +1,13 @@
 <?php
 	class database{
-		var $host 	= 'localhost';
-		var $uname	= 'root';
-		var $pass	= '';
-		var $db 	= 'malasngoding';
+		var $host 	= "localhost";
+		var $uname	= "root";
+		var $pass	= "";
+		var $db 	= "sukangoding";
+		var $conn;
 
 		function __construct(){
-			$conn = mysqli_connect($this->host, $this->uname, $this->pass, $this->db);
+			$this->conn = mysqli_connect($this->host, $this->uname, $this->pass, $this->db);
 
 			//cek koneksi
 			if (mysqli_connect_errno()){
@@ -16,7 +17,7 @@
 		}
 
     	function tampil_data(){
-        	$data = mysqli_query($this->conn, "select * from user");
+        	$data = mysqli_query($this->conn,"select * from user");
         	while($d = mysqli_fetch_array($data)){
             	$hasil[] = $d;
         	}
@@ -24,10 +25,10 @@
     	}
 
     	function input($nama,$alamat,$usia){
-    		mysqli_query($this->conn, "insert into user values('','$nama','alamat','usia')");
+    		mysqli_query($this->conn,"insert into user values('','$nama','alamat','usia')");
     	}
     	function hapus($id){
-    		mysqli_query($this->conn, "delete from user where id='$id'");
+    		mysqli_query($this->conn,"delete from user where id='$id'");
     	}
 	}
 //$db = new database;
