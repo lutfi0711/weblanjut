@@ -19,7 +19,7 @@ $db = new database();
 			<td><?php echo $x["usia"]; ?></td>
 			<td>
 				<a href="edit.php?id=<?php echo $x['id']; ?>&aksi=edit">Edit</a>
-				<a href="proses.php?id=<?php echo $x['id']; ?>&aksi=edit">Hapus</a>
+				<a href="proses.php?id=<?php echo $x['id']; ?>&aksi=hapus">Hapus</a>
 			</td>
 		</tr>
 	<?php
